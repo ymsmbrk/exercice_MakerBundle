@@ -1,100 +1,127 @@
-# exercice_MakerBundle
-ATTENTION !
-Toutes les commandes doivent être exécutés 
-dans le répertoire courant de votre projet. 
-
-MODULE
+MODULE 
 (Symfony)
-MakerBundle
+(MakerBundle)
+lien utile :
+https://symfony.com/doc/current/index.html
+https://google.com
+https://packagist.org/
 
-Exercice 1 : 
-Depuis votre terminal initier un projet symfony minimaliste nommé website_test
-Syntaxe:
-symfony new website_test
+Exercice 1 :
+Initialiser un projet traditionnel nommé projet,  un projet minimaliste nommer project_1 ainsi qu’ un second projet –full nommer project_2
 
-Exercice 2 : 
-Lui intégrer  tous les bundles nécessaires à son bon fonctionnement ainsi qu'à sa sécurité.
-( N’oublions pas que l'utilité première d'utiliser le framework Symfony est de concevoir des applications web sécurisés et robustes : )
+syntaxe projet minimaliste :
 
-Syntaxe :
-composer require sensio/framework-extra-bundle symfony/twig-bundle symfony/web-profiler-bundle symfony/monolog-bundle symfony/security-bundle –dev symfony/debug-bundle symfony/orm-pack 
-symfony/maker-bundle
+syntaxe projet –full :
 
-Exercice 3 :
-Une fois les bundles nécessaire correctement configurer dans l’environnement de configuration,
- depuis votre terminal
-Créer un controller nommé HomeController 
-syntaxe :
-php bin/console make:controller
-Puis nommé le controller comme demandé par le terminal
-( ! Respecter la convention Camelcase )
+syntaxe projet traditionnel webapp :
 
-Exercice 4 :
-Créer un second controller nommé ContactController 
-( Toujours suivre la convention de nommage en camelCase )
-
-Exercice 5 :
-( La suite va vous demander un peu de réflexion personnel )
-Définir quelles attributs peut contenir une entité Article
-Attributs Article :
-name type = string = Varchar(100) NOT NULL,
-qte type = Integer (valeur numérique entier) = Int NOT NULL,
-description type = TEXT = Varchar(255) de plus de 255 caractère autorisé = LONGTEXT NOT NULL,
-img type = string = Varchar(255) NOT NULL,
-createdAt type = datetime_immutable NOT NULL
-
-Exercice 6 :
-Une fois votre entité Article définit depuis votre terminal, toujour a la racine de votre projet website_test,
-Créer l’entité Article grâce à la bonne 
-syntaxe:
-php bin/console make:entity
-( Vous pouvez obtenir la liste des executable make et de la console symfony via : php bin/console )
+Exercice 2 :
+Ouvrez les deux projets dans votre ide et comparer leurs structures 
 
 Question :
-Rendez-vous sur votre ide, quelles sont les modifications que l'on peut constater via cette action ?
-Suite à la création de mon Entity Article via la ligne de commande, Symfony a générer automatiquement la création de repo et de fichier en adéquation avec notre entity ( l’Entity et son Repo respectif )
+Quelle(s) différences pouvez-vous observer entre les deux structures de chaque projet ?
+.
+
+Exercice 3 :
+Toujours sur votre ide ouvrez le conf/bundle.php du projet 2 lister l’ensemble des bundle, trouver leurs définitions ainsi que les commandes composer qui permettent d'initialiser ses bundles.
+
+SensioFrameworkExtraBundle
+
+syntaxe : 
+
+TwigBundle 
+ 
+syntaxe :
+ 
+WebProfilerBundle 
+ 
+syntaxe :
+ 
+ MonologBundle
+ 
+syntaxe :
+ 
+This work is licensed under the Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification 4.0 International License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+DebugBundle 
+ 
+syntaxe: 
+ 
+DoctrineBundle
+ 
+syntaxe :
+ 
+DoctrineMigrationsBundle
+.
+syntaxe :
+ 
+This work is licensed under the Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification 4.0 International License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+SecurityBundle
+ 
+syntaxe :
+ 
+TwigExtraBundle
+ 
+syntaxe:
+ 
+MakerBundle
+ 
+syntaxe:
+ 
+ 
+Exercice 4 :
+A partir du terminal se rendre dans le project_1 et initialisé les bundles grâce aux commandes trouver en amont
+(le config/bundle.php du project_1 doit contenir les bundle du projet_2)
+
+Exercice 5 :
+Supprimer le project_2 depuis le terminal en ligne de commande 
+
+Exercice 6 :
+Trouvez la ligne de commande qui va permettre d'exécuter le composant console de symfony
+
+syntaxe :
+
+Exécuter cette syntaxe ?
+Elle permet d’afficher l’ensemble des commandes exécutable via la console de symfony
 
 Exercice 7 :
-Créer une entité Role
-Définir les attributs qu’elle peut contenir
-( Posez-vous les bonnes questions lors de cette phase de conception ? : )
-admin type = Int NOT NULL,
-moderateur type = Int NOT NULL,
-currentUser = Int NOT NULL,
+Trouver la commande qui va permettre d’afficher la list des commandes exécutable du MakerBundle*
+syntaxe :
 
-Exercice 8 :
-Depuis votre terminal créer un formulaire via la console symfony grâce au MakerBundle
-Pour trouver la commande adapté je vais aller regarder dans la liste de référence de la console symfony :
-php bin/console ( affiche la liste des executable de la console )
-quelle commande est adapté à mon besoin.
-syntaxe : php bin/console make:form
-A savoir que pour exécuter certaine commande du bundleMaker 
-celle ci auront besoin de dépendance comme pour notre exemple de création de formulaire,
-dans ce cas, la console symfony nous reverra un retour d’erreur ainsi qu’un syntaxe afin d’y remédier.
-
-
-Sur votre ide, quel changement peut-on constater sur le projet ?
-la commande a généré automatiquement un repo src/Form et donc le formulaire,
-qui sera rattaché à son entité et qui permettra alors d’interagir avec celle-ci.
+ Exercice 8 :
+Depuis le terminal grâce à la console de symfony Créer un Controller nommer HomeController
 
 Exercice 9 :
-Maintenant depuis votre ide toujour via la console de symfony
- Exécuté la ligne de commande qui va servir à créer un espace d’authentification sur le projet
-syntaxe :
-php bin/console make:auth
- 
-Question : 
-Que se passe-t-il ?
-le terminal nous demande une entité User
+Sur votre ide rendez vous dans le repository src/Controller/
+
+Que pouvez-vous constater ?
 
 Exercice 10 :
-Résoudre le(s) conflit(s) possible(s) qui peuvent empêcher l'exécution de la commande précédente.
-Pour pouvoir make un espace login/authenticator ( pour s’identifier ),
-la console me suggére de créer une entité User utile à son fonctionnement,
+Toujours sur votre ide rendez vous dans le repository templates/
 
-Créer une Entité User :
-syntaxe:
-php bin/console make:user
+Que pouvez-vous constater ?
+
+Exercice 11 :
+Depuis le terminal démarrer le server symfony puis afficher le projet sur votre 
+navigateur
+
+Quelle est la syntaxe qui va permettre cette action ?
+
+lancé sur votre navigateur
+l’url de retour donner via le terminal
 
 This work is licensed under the Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification 4.0 International License. To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+
+
+
+
+
+
+
+
+
